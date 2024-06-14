@@ -23,14 +23,13 @@ public class prac4 {
         }
 
         int evenSum = 0;
-        
 
-        //sum of even
+        // sum of even
         for (int i = 0; i < 10; i++) {
             if (arr[i] % 2 == 0) {
                 evenSum += arr[i];
             }
-           
+
         }
         int oddSum = sumAllElements - evenSum;
 
@@ -44,4 +43,3 @@ public class prac4 {
     }
 
 }
-
