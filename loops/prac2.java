@@ -15,18 +15,17 @@ public class prac2 {
         } else if (num == 0 || num == 1) {
             System.out.print("Neither prime nor composite.");
         } else {
-            int flag = 0;
+            boolean flag = false;
 
             for (int i = 2; i < num; i++) {
                 if (num % i == 0) {
-                    flag++;
-                }
-                if (flag > 0) {
+                    flag = true;
                     break;
                 }
+                
             }
 
-            if (flag > 0) {
+            if (flag) {
                 System.out.print(num + " is not a prime number");
             } else {
                 System.out.print(num + " is a prime number");
