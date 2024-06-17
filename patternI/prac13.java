@@ -31,5 +31,6 @@ public class prac13 {
             }
             System.out.println();
         }
+        sc.close();
     }
 }
