@@ -25,7 +25,7 @@ public class prac11 {
     public static void isPrimeInRange(int start, int end){
         for (int i = start; i <= end; i++) {
             if (isPrime(i)) {
-                System.out.println(i + " is prime.");
+                System.out.print(i + " ");
             }
         }
     }
