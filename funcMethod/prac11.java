@@ -5,6 +5,7 @@ import java.util.Scanner;
 //check prime number >= 2
 
 public class prac11 {
+    //func to check prime
     public static boolean isPrime(int num) {
 
         if (num == 2) {
@@ -20,6 +21,15 @@ public class prac11 {
         return true;
     }
 
+    //func to ckeck prime in range
+    public static void isPrimeInRange(int start, int end){
+        for (int i = start; i <= end; i++) {
+            if (isPrime(i)) {
+                System.out.println(i + " is prime.");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -27,12 +37,8 @@ public class prac11 {
         int start = sc.nextInt();
         int end = sc.nextInt();
 
-        for (int i = start; i <= end; i++) {
-            if (isPrime(i)) {
-                System.out.println(i + " is prime.");
-            }
-        }
-
+        //calling func to check in range
+        isPrimeInRange(start, end);
         sc.close();
     }
 }
