@@ -2,11 +2,11 @@ package Java_Learning.funcMethod;
 
 import java.util.Scanner;
 
-//to calculate binary to decimal
+//to calculate binary from decimal
 
 public class prac12 {
 
-    // func to calculate bin to decimal
+    // func to calculate bin from decimal
     public static int binToDeci(int num) {
         int decimal = 0;
         int power = 0;
