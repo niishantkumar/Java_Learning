@@ -27,7 +27,7 @@ public class prac12 {
         System.out.print("Enter binary number : ");
         int num = sc.nextInt();
 
-        System.out.println("Decimal number is : " + binToDeci(num));
+        System.out.println("Decimal of " + num + " = " + binToDeci(num));
 
         sc.close();
     }
