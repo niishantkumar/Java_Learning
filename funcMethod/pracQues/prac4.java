@@ -23,6 +23,8 @@ public class prac4 {
         }
 
         System.out.println("Sum of digits of " + numCopy + " = " + sumDigitsOfInt);
+
+        sc.close();
     }
 
     public static void main(String[] args) {
