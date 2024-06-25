@@ -5,9 +5,12 @@ package Java_Learning.patternII;
 public class patternClass {
     // to print square pattern
     public static void squarePat() {
-        for (int line = 1; line <= 5; line++) {
-            for (int col = 1; col <= 5; col++) {
-                if (line == 1 || line == 5 || col == 1 || col == 5) {
+        int totalRow = 5;
+        int totalCol = 5;
+
+        for (int row = 1; row <= totalRow; row++) {
+            for (int col = 1; col <= totalCol; col++) {
+                if (row == 1 || row == 5 || col == 1 || col == 5) {
                     System.out.print("* ");
                 } else {
                     System.out.print("  ");
@@ -19,9 +22,12 @@ public class patternClass {
 
     // to print rectangle pattern
     public static void rectanglePat() {
-        for (int line = 1; line <= 4; line++) {
-            for (int col = 1; col <= 5; col++) {
-                if (line == 1 || line == 4 || col == 1 || col == 5) {
+        int totalRow = 4;
+        int totalCol = 5;
+
+        for (int row = 1; row <= totalRow; row++) {
+            for (int col = 1; col <= totalCol; col++) {
+                if (row == 1 || row == totalRow || col == 1 || col == totalCol) {
                     System.out.print("* ");
                 } else {
                     System.out.print("  ");
@@ -31,8 +37,25 @@ public class patternClass {
         }
     }
 
+    // to print inverted and rotated half pyramid
+    public static void rotHalfPyr() {
+        int totalLine = 4;
+        for (int line = 1; line <= totalLine; line++) {
+
+            // loop for space
+            for (int space = totalLine - line; space >= 1; space--) {
+                System.out.print(" ");
+            }
+            // loop for star
+            for (int star = 1; star <= line; star++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        //squarePat();
-        rectanglePat();
+        // squarePat();
+        rotHalfPyr();
     }
 }
