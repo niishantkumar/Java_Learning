@@ -1,13 +1,8 @@
 package Java_Learning.patternII;
-/*
-* * * * *
-*       *
-*       *
-*       *
-* * * * *
- */
 
-public class prac1 {
+//prgm to print different patterns
+
+public class patternClass {
     // to print square pattern
     public static void squarePat() {
         for (int line = 1; line <= 5; line++) {
@@ -22,8 +17,22 @@ public class prac1 {
         }
     }
 
-    public static void main(String[] args) {
-        squarePat();
+    // to print rectangle pattern
+    public static void rectanglePat() {
+        for (int line = 1; line <= 4; line++) {
+            for (int col = 1; col <= 5; col++) {
+                if (line == 1 || line == 4 || col == 1 || col == 5) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
     }
 
+    public static void main(String[] args) {
+        //squarePat();
+        rectanglePat();
+    }
 }
