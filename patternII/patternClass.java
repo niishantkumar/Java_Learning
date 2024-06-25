@@ -43,7 +43,7 @@ public class patternClass {
         for (int line = 1; line <= totalLine; line++) {
 
             // loop for space
-            for (int space = totalLine - line; space >= 1; space--) {
+            for (int space = 1; space <= totalLine - line; space++) {
                 System.out.print(" ");
             }
             // loop for star
