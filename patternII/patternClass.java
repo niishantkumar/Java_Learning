@@ -101,8 +101,53 @@ public class patternClass {
         }
     }
 
+    // to print butterfly Pattern
+    public static void butterflyPattern() {
+        int totalLine = 5;
+
+        // loop for 1st half
+        for (int i = 1; i <= totalLine; i++) {
+
+            // loop for stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+
+            // for spaces
+            for (int j = 1; j <= (totalLine - i) * 2; j++) {
+                System.out.print(" ");
+            }
+
+            // for stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // loop for 2nd half
+        for (int i = totalLine; i >= 1; i--) {
+
+            // loop for stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+
+            // for spaces
+            for (int j = 1; j <= (totalLine - i) * 2; j++) {
+                System.out.print(" ");
+            }
+
+            // for stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // squarePat();
-        zero_one_triangle();
+        butterflyPattern();
     }
 }
