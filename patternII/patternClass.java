@@ -67,8 +67,24 @@ public class patternClass {
         }
     }
 
+    // to print floyd'strianle
+    public static void floyds_triangle() {
+        int totalLine = 5;
+        int trianleNumbers = 0;
+
+        for (int i = 1; i <= totalLine; i++) {
+            
+            // loop for numbers
+            for (int j = 1; j <= i; j++) {
+                trianleNumbers++;
+                System.out.print(trianleNumbers+" ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // squarePat();
-        rotHalfPyrNum();
+        floyds_triangle();
     }
 }
