@@ -60,8 +60,8 @@ public class patternClass {
         for (int i = 1; i <= totalLine; i++) {
             // loop for numbers
             for (int j = 1; j <= totalLine - i + 1; j++) {
-                
-                System.out.print(j+" ");
+
+                System.out.print(j + " ");
             }
             System.out.println();
         }
@@ -73,11 +73,29 @@ public class patternClass {
         int trianleNumbers = 0;
 
         for (int i = 1; i <= totalLine; i++) {
-            
+
             // loop for numbers
             for (int j = 1; j <= i; j++) {
                 trianleNumbers++;
-                System.out.print(trianleNumbers+" ");
+                System.out.print(trianleNumbers + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // to print 0-1 trianle
+    public static void zero_one_triangle() {
+        int totalLine = 5;
+
+        for (int i = 1; i <= totalLine; i++) {
+
+            // loop for numbers
+            for (int j = 1; j <= i; j++) {
+                if ((i % 2 != 0 && j % 2 != 0) || (i % 2 == 0 && j % 2 == 0)) {
+                    System.out.print("1 ");
+                } else {
+                    System.out.print("0 ");
+                }
             }
             System.out.println();
         }
@@ -85,6 +103,6 @@ public class patternClass {
 
     public static void main(String[] args) {
         // squarePat();
-        floyds_triangle();
+        zero_one_triangle();
     }
 }
