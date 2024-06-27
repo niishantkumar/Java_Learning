@@ -165,8 +165,31 @@ public class patternClass {
 
     }
 
+    // to print hollow rhombus
+    public static void hollowRhombus_pattern() {
+        int totalLine = 5;
+
+        for (int i = 1; i <= totalLine; i++) {
+            // for spaces
+            for (int j = 1; j <= totalLine - i; j++) {
+                System.out.print(" ");
+            }
+
+            // for star
+            for (int j = 1; j <= totalLine; j++) {
+                if (i == 1 || i == 5 || j == 1 || j == 5) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // squarePat();
-        solidRhombus_pattern();
+        hollowRhombus_pattern();
     }
 }
