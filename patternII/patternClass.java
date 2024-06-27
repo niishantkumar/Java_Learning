@@ -146,8 +146,27 @@ public class patternClass {
         }
     }
 
+    // to print solid rhombus
+    public static void solidRhombus_pattern() {
+        int totalLine = 5;
+
+        for (int i = 1; i <= totalLine; i++) {
+            // loop for space
+            for (int j = 1; j <= totalLine - i; j++) {
+                System.out.print(" ");
+            }
+
+            // for star
+            for (int j = 1; j <= totalLine; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+
     public static void main(String[] args) {
         // squarePat();
-        butterflyPattern();
+        solidRhombus_pattern();
     }
 }
