@@ -188,8 +188,41 @@ public class patternClass {
         }
     }
 
+    // to print dimond pattern
+    public static void dimond_pattern() {
+        int totalLine = 4;
+
+        // to print 1st half
+        for (int i = 1; i <= totalLine; i++) {
+            // loop for space
+            for (int j = 1; j <= totalLine - i; j++) {
+                System.out.print(" ");
+            }
+
+            // loop for star
+            for (int j = 1; j <= (i * 2) - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // to print 2nd half
+        for (int i = totalLine; i >= 1; i--) {
+            // loop for space
+            for (int j = 1; j <= totalLine - i; j++) {
+                System.out.print(" ");
+            }
+
+            // loop for star
+            for (int j = 1; j <= (i * 2) - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // squarePat();
-        hollowRhombus_pattern();
+        dimond_pattern();
     }
 }
