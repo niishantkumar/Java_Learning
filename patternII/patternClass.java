@@ -1,6 +1,6 @@
 package Java_Learning.patternII;
 
-import java.util.Scanner;;
+import java.util.Scanner;
 
 //prgm to print different patterns
 
@@ -270,6 +270,6 @@ public class patternClass {
                 System.out.println("Invalid choice");
                 ;
         }
-
+        sc.close();
     }
 }
