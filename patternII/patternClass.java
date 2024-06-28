@@ -1,5 +1,7 @@
 package Java_Learning.patternII;
 
+import java.util.Scanner;;
+
 //prgm to print different patterns
 
 public class patternClass {
@@ -222,7 +224,10 @@ public class patternClass {
     }
 
     public static void main(String[] args) {
-        // squarePat();
-        dimond_pattern();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("The choices are :");
+        System.err.println(
+                "1. Square Pattern\n2. Rectangle Pattern\n3. Rotated Half Pyramid with star pattern\n4. Rotated Half Pyramid with number pattern\n5. Floyd's Triangle\n6. Zero-One Triangle\n7. Butterfly Pattern\n8. Solid Rhombus Pattern\n9. Hollow Rhombus Pattern\n10. Diamond Pattern");
     }
 }
