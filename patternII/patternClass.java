@@ -6,13 +6,11 @@ import java.util.Scanner;
 
 public class patternClass {
     // to print square pattern
-    public static void squarePat() {
-        int totalRow = 5;
-        int totalCol = 5;
+    public static void squarePat(int length) {
 
-        for (int row = 1; row <= totalRow; row++) {
-            for (int col = 1; col <= totalCol; col++) {
-                if (row == 1 || row == 5 || col == 1 || col == 5) {
+        for (int row = 1; row <= length; row++) {
+            for (int col = 1; col <= length; col++) {
+                if (row == 1 || row == length || col == 1 || col == length) {
                     System.out.print("* ");
                 } else {
                     System.out.print("  ");
@@ -23,13 +21,11 @@ public class patternClass {
     }
 
     // to print rectangle pattern
-    public static void rectanglePat() {
-        int totalRow = 4;
-        int totalCol = 5;
+    public static void rectanglePat(int length, int breadth) {
 
-        for (int row = 1; row <= totalRow; row++) {
-            for (int col = 1; col <= totalCol; col++) {
-                if (row == 1 || row == totalRow || col == 1 || col == totalCol) {
+        for (int row = 1; row <= length; row++) {
+            for (int col = 1; col <= breadth; col++) {
+                if (row == 1 || row == length || col == 1 || col == breadth) {
                     System.out.print("* ");
                 } else {
                     System.out.print("  ");
@@ -40,12 +36,12 @@ public class patternClass {
     }
 
     // to print inverted and rotated half pyramid
-    public static void rotHalfPyr() {
-        int totalLine = 4;
-        for (int line = 1; line <= totalLine; line++) {
+    public static void rotHalfPyr(int length) {
+
+        for (int line = 1; line <= length; line++) {
 
             // loop for space
-            for (int space = 1; space <= totalLine - line; space++) {
+            for (int space = 1; space <= length - line; space++) {
                 System.out.print(" ");
             }
             // loop for star
@@ -57,11 +53,11 @@ public class patternClass {
     }
 
     // to print inverted and rotated half pyramid with number
-    public static void rotHalfPyrNum() {
-        int totalLine = 5;
-        for (int i = 1; i <= totalLine; i++) {
+    public static void rotHalfPyrNum(int length) {
+
+        for (int i = 1; i <= length; i++) {
             // loop for numbers
-            for (int j = 1; j <= totalLine - i + 1; j++) {
+            for (int j = 1; j <= length - i + 1; j++) {
 
                 System.out.print(j + " ");
             }
@@ -70,11 +66,11 @@ public class patternClass {
     }
 
     // to print floyd'strianle
-    public static void floyds_triangle() {
-        int totalLine = 5;
+    public static void floyds_triangle(int length) {
+
         int trianleNumbers = 0;
 
-        for (int i = 1; i <= totalLine; i++) {
+        for (int i = 1; i <= length; i++) {
 
             // loop for numbers
             for (int j = 1; j <= i; j++) {
@@ -86,10 +82,9 @@ public class patternClass {
     }
 
     // to print 0-1 trianle
-    public static void zero_one_triangle() {
-        int totalLine = 5;
+    public static void zero_one_triangle(int length) {
 
-        for (int i = 1; i <= totalLine; i++) {
+        for (int i = 1; i <= length; i++) {
 
             // loop for numbers
             for (int j = 1; j <= i; j++) {
@@ -104,11 +99,10 @@ public class patternClass {
     }
 
     // to print butterfly Pattern
-    public static void butterflyPattern() {
-        int totalLine = 5;
+    public static void butterflyPattern(int length) {
 
         // loop for 1st half
-        for (int i = 1; i <= totalLine; i++) {
+        for (int i = 1; i <= length; i++) {
 
             // loop for stars
             for (int j = 1; j <= i; j++) {
@@ -116,7 +110,7 @@ public class patternClass {
             }
 
             // for spaces
-            for (int j = 1; j <= (totalLine - i) * 2; j++) {
+            for (int j = 1; j <= (length - i) * 2; j++) {
                 System.out.print(" ");
             }
 
@@ -128,7 +122,7 @@ public class patternClass {
         }
 
         // loop for 2nd half
-        for (int i = totalLine; i >= 1; i--) {
+        for (int i = length; i >= 1; i--) {
 
             // loop for stars
             for (int j = 1; j <= i; j++) {
@@ -136,7 +130,7 @@ public class patternClass {
             }
 
             // for spaces
-            for (int j = 1; j <= (totalLine - i) * 2; j++) {
+            for (int j = 1; j <= (length - i) * 2; j++) {
                 System.out.print(" ");
             }
 
@@ -149,17 +143,16 @@ public class patternClass {
     }
 
     // to print solid rhombus
-    public static void solidRhombus_pattern() {
-        int totalLine = 5;
+    public static void solidRhombus_pattern(int length) {
 
-        for (int i = 1; i <= totalLine; i++) {
+        for (int i = 1; i <= length; i++) {
             // loop for space
-            for (int j = 1; j <= totalLine - i; j++) {
+            for (int j = 1; j <= length - i; j++) {
                 System.out.print(" ");
             }
 
             // for star
-            for (int j = 1; j <= totalLine; j++) {
+            for (int j = 1; j <= length; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -168,18 +161,17 @@ public class patternClass {
     }
 
     // to print hollow rhombus
-    public static void hollowRhombus_pattern() {
-        int totalLine = 5;
+    public static void hollowRhombus_pattern(int length) {
 
-        for (int i = 1; i <= totalLine; i++) {
+        for (int i = 1; i <= length; i++) {
             // for spaces
-            for (int j = 1; j <= totalLine - i; j++) {
+            for (int j = 1; j <= length - i; j++) {
                 System.out.print(" ");
             }
 
             // for star
-            for (int j = 1; j <= totalLine; j++) {
-                if (i == 1 || i == 5 || j == 1 || j == 5) {
+            for (int j = 1; j <= length; j++) {
+                if (i == 1 || i == length || j == 1 || j == length) {
                     System.out.print("*");
                 } else {
                     System.out.print(" ");
@@ -191,13 +183,12 @@ public class patternClass {
     }
 
     // to print dimond pattern
-    public static void dimond_pattern() {
-        int totalLine = 4;
+    public static void dimond_pattern(int length) {
 
         // to print 1st half
-        for (int i = 1; i <= totalLine; i++) {
+        for (int i = 1; i <= length; i++) {
             // loop for space
-            for (int j = 1; j <= totalLine - i; j++) {
+            for (int j = 1; j <= length - i; j++) {
                 System.out.print(" ");
             }
 
@@ -209,9 +200,9 @@ public class patternClass {
         }
 
         // to print 2nd half
-        for (int i = totalLine; i >= 1; i--) {
+        for (int i = length; i >= 1; i--) {
             // loop for space
-            for (int j = 1; j <= totalLine - i; j++) {
+            for (int j = 1; j <= length - i; j++) {
                 System.out.print(" ");
             }
 
@@ -235,40 +226,79 @@ public class patternClass {
         System.out.flush();
 
         switch (choice) {
-            case 1:
-                squarePat();
+            case 1: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                squarePat(length);
                 break;
-            case 2:
-                rectanglePat();
+            }
+            case 2: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                System.out.print("Enter breadth : ");
+                int breadth = sc.nextInt();
+                rectanglePat(length, breadth);
                 break;
-            case 3:
-                rotHalfPyr();
+            }
+            case 3: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                rotHalfPyr(length);
                 break;
-            case 4:
-                rotHalfPyrNum();
+            }
+
+            case 4: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                rotHalfPyrNum(length);
                 break;
-            case 5:
-                floyds_triangle();
+            }
+
+            case 5: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                floyds_triangle(length);
                 break;
-            case 6:
-                zero_one_triangle();
+            }
+
+            case 6: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                zero_one_triangle(length);
                 break;
-            case 7:
-                butterflyPattern();
+            }
+
+            case 7: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                butterflyPattern(length / 2);
                 break;
-            case 8:
-                solidRhombus_pattern();
+            }
+
+            case 8: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                solidRhombus_pattern(length);
                 break;
-            case 9:
-                hollowRhombus_pattern();
+            }
+
+            case 9: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                hollowRhombus_pattern(length);
                 break;
-            case 10:
-                dimond_pattern();
+            }
+
+            case 10: {
+                System.out.print("Enter length : ");
+                int length = sc.nextInt();
+                dimond_pattern(length / 2);
                 break;
+            }
 
             default:
                 System.out.println("Invalid choice");
-                ;
+                break;
         }
         sc.close();
     }
