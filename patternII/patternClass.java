@@ -229,5 +229,47 @@ public class patternClass {
         System.out.println("The choices are :");
         System.err.println(
                 "1. Square Pattern\n2. Rectangle Pattern\n3. Rotated Half Pyramid with star pattern\n4. Rotated Half Pyramid with number pattern\n5. Floyd's Triangle\n6. Zero-One Triangle\n7. Butterfly Pattern\n8. Solid Rhombus Pattern\n9. Hollow Rhombus Pattern\n10. Diamond Pattern");
+        System.out.print("Enter your choice (1/2/3/4/5/6/7/8/9/10): ");
+        int choice = sc.nextInt();
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+
+        switch (choice) {
+            case 1:
+                squarePat();
+                break;
+            case 2:
+                rectanglePat();
+                break;
+            case 3:
+                rotHalfPyr();
+                break;
+            case 4:
+                rotHalfPyrNum();
+                break;
+            case 5:
+                floyds_triangle();
+                break;
+            case 6:
+                zero_one_triangle();
+                break;
+            case 7:
+                butterflyPattern();
+                break;
+            case 8:
+                solidRhombus_pattern();
+                break;
+            case 9:
+                hollowRhombus_pattern();
+                break;
+            case 10:
+                dimond_pattern();
+                break;
+
+            default:
+                System.out.println("Invalid choice");
+                ;
+        }
+
     }
 }
