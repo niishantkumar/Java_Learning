@@ -22,7 +22,7 @@ public class prac5 {
         Scanner sc = new Scanner(System.in);
 
         // taking input of array size
-        System.out.print("Enter syze of array : ");
+        System.out.print("Enter size of array : ");
         int size = sc.nextInt();
 
         // declaring array
