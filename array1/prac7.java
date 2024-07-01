@@ -42,7 +42,7 @@ public class prac7 {
         reverseArray(arr);
 
         // displaying of array after reversing
-        System.out.println("Your array is :");
+        System.out.println("\nYour reversed array is :");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
