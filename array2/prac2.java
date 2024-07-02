@@ -13,23 +13,24 @@ public class prac2 {
             prefix[i] = prefix[i - 1] + array[i];
         }
 
-        int sum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int tempSum;
 
         for (int i = 0; i < array.length; i++) {
             int start = i;
 
             for (int j = i; j < array.length; j++) {
                 int end = j;
-                int tempSum = 0;
+                tempSum = 0;
                 tempSum = start == 0 ? prefix[end] : prefix[end] - prefix[start - 1];
 
-                if (sum < tempSum) {
-                    sum = tempSum;
+                if (maxSum < tempSum) {
+                    maxSum = tempSum;
                 }
             }
         }
 
-        System.out.println("Max subarray sum = " + sum);
+        System.out.println("Max subarray sum = " + maxSum);
     }
 
     public static void main(String[] args) {
