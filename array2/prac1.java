@@ -1,4 +1,4 @@
-package Java_Learning.array1;
+package Java_Learning.array2;
 
 import java.util.Scanner;;
 
