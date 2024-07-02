@@ -8,7 +8,6 @@ public class prac1 {
 
         int sum = 0;
 
-        System.out.println("The pairs are :");
         for (int i = 0; i < array.length; i++) {
             int start = i;
 
