@@ -11,11 +11,11 @@ public class prac1 {
         for (int i = 0; i < array.length; i++) {
             int start = i;
 
-            for (int j = i; j <= array.length; j++) {
+            for (int j = i; j < array.length; j++) {
                 int end = j;
                 int tempSum = 0;
 
-                for (int k = start; k < end; k++) {
+                for (int k = start; k <= end; k++) {
                     tempSum += array[k];
                 }
 
