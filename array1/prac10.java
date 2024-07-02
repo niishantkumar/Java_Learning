@@ -3,25 +3,34 @@ package Java_Learning.array1;
 import java.util.Scanner;;
 
 public class prac10 {
-    // func to print pair of array
+    // func to print subarray of an array and max sum
     public static void printSubArray(int array[]) {
+
+        int sum = 0;
 
         System.out.println("The pairs are :");
         for (int i = 0; i < array.length; i++) {
-           int start = i;
+            int start = i;
 
             for (int j = i; j <= array.length; j++) {
                 int end = j;
-                
+                int tempSum = 0;
+
                 for (int k = start; k < end; k++) {
                     System.out.print(array[k] + " ");
+                    tempSum += array[k];
                 }
-                
+
+                if (sum < tempSum) {
+                    sum = tempSum;
+                }
+
                 System.out.println();
             }
             System.out.println();
-
         }
+
+        System.out.println("Max subarray sum = " + sum);
     }
 
     public static void main(String[] args) {
