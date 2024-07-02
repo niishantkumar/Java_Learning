@@ -3,6 +3,35 @@ package Java_Learning.array2;
 import java.util.Scanner;
 
 public class prac2 {
+    // func to print max subarray sum
+    public static void printSubArray_MaxSum(int array[]) {
+        int prefix[] = new int[array.length];
+
+        prefix[0] = array[0];
+
+        for (int i = 1; i < prefix.length; i++) {
+            prefix[i] = prefix[i - 1] + array[i];
+        }
+
+        int sum = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            int start = i;
+
+            for (int j = i; j < array.length; j++) {
+                int end = j;
+                int tempSum = 0;
+                tempSum = start == 0 ? prefix[end] : prefix[end] - prefix[start - 1];
+
+                if (sum < tempSum) {
+                    sum = tempSum;
+                }
+            }
+        }
+
+        System.out.println("Max subarray sum = " + sum);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -16,6 +45,9 @@ public class prac2 {
             System.out.print("Enter element at index " + i + " : ");
             array[i] = sc.nextInt();
         }
+
+        printSubArray_MaxSum(array);
+
         sc.close();
     }
 }
