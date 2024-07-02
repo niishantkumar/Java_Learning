@@ -4,7 +4,7 @@ import java.util.Scanner;;
 
 public class prac1 {
     // func to print max sum of an subarray
-    public static void printSubArray(int array[]) {
+    public static void printSubArray_MaxSum(int array[]) {
 
         int sum = 0;
 
@@ -43,7 +43,7 @@ public class prac1 {
             array[i] = sc.nextInt();
         }
 
-        printSubArray(array);
+        printSubArray_MaxSum(array);
 
         sc.close();
     }
