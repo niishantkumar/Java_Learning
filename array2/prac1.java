@@ -6,7 +6,7 @@ public class prac1 {
     // func to print max sum of an subarray
     public static void printSubArray_MaxSum(int array[]) {
 
-        int sum = 0;
+        int sum = Integer.MIN_VALUE;
 
         for (int i = 0; i < array.length; i++) {
             int start = i;
