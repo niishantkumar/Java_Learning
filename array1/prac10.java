@@ -6,7 +6,7 @@ public class prac10 {
     // func to print subarray of an array and max sum
     public static void printSubArray(int array[]) {
 
-        int sum = 0;
+        int sum = Integer.MIN_VALUE;
 
         System.out.println("The pairs are :");
         for (int i = 0; i < array.length; i++) {
