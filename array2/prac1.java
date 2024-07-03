@@ -1,9 +1,9 @@
 package Java_Learning.array2;
 
 import java.util.Scanner;;
-
+// using brute force
 public class prac1 {
-    // func to print max sum of an subarray
+    // func to print max sum of an subarray 
     public static void printSubArray_MaxSum(int array[]) {
 
         int sum = Integer.MIN_VALUE;

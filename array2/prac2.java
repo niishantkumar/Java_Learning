@@ -2,6 +2,8 @@ package Java_Learning.array2;
 
 import java.util.Scanner;
 
+//using prefix sum
+
 public class prac2 {
     // func to print max subarray sum
     public static void printSubArray_MaxSum(int array[]) {
