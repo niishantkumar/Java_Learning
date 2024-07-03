@@ -38,10 +38,6 @@ public class prac5 {
         int waterStored = 0;
         for (int i = 0; i < height.length; i++) {
 
-            if (height[i] > Math.min(maxRight[i], maxLeft[i])) {
-                continue;
-            }
-
             waterStored += (Math.min(maxRight[i], maxLeft[i]) - height[i]);
         }
 
