@@ -3,30 +3,30 @@ package Java_Learning.array2;
 //rainwater trapping problem - brute force
 
 public class prac5 {
-    public static void waterTrapped(int arrayOfHeight[]) {
-        int length = arrayOfHeight.length;
+    public static void waterTrapped(int height[]) {
+        int length = height.length;
 
         // array of max right height
         int maxRight[] = new int[length];
-        maxRight[length - 1] = arrayOfHeight[length - 1];
+        maxRight[length - 1] = height[length - 1];
 
         for (int i = length - 2; i >= 0; i--) {
-            maxRight[i] = Math.max(maxRight[i+1], arrayOfHeight[i]);
+            maxRight[i] = Math.max(maxRight[i + 1], height[i]);
         }
 
         for (int i = 0; i < length; i++) {
             System.out.print(maxRight[i] + " ");
-            
+
         }
         System.out.println();
 
         // array of max left height
         int maxLeft[] = new int[length];
-        maxLeft[0] = arrayOfHeight[0];
+        maxLeft[0] = height[0];
 
-        for (int i = 1; i < arrayOfHeight.length; i++) {
+        for (int i = 1; i < height.length; i++) {
 
-            maxLeft[i] = Math.max(maxLeft[i-1], arrayOfHeight[i]);
+            maxLeft[i] = Math.max(maxLeft[i - 1], height[i]);
         }
 
         for (int i = 0; i < length; i++) {
@@ -36,13 +36,13 @@ public class prac5 {
         System.out.println();
 
         int waterStored = 0;
-        for (int i = 0; i < arrayOfHeight.length; i++) {
+        for (int i = 0; i < height.length; i++) {
 
-            if (arrayOfHeight[i] > Math.min(maxRight[i], maxLeft[i])) {
+            if (height[i] > Math.min(maxRight[i], maxLeft[i])) {
                 continue;
             }
 
-            waterStored += (Math.min(maxRight[i], maxLeft[i]) - arrayOfHeight[i]);
+            waterStored += (Math.min(maxRight[i], maxLeft[i]) - height[i]);
         }
 
         System.out.println("Vol of water stored = " + waterStored);
