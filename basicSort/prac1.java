@@ -19,13 +19,32 @@ public class prac1 {
         }
     }
 
+    // func for selection sort
+    public static void selectionSort(int array[]) {
+        int n = array.length;
+        int smallPos;
+        int temp;
+
+        for (int i = 0; i < n - 1; i++) {
+            smallPos = i;
+            for (int j = i + 1; j < n; j++) {
+                if (array[smallPos] > array[j]) {
+                    smallPos = j;
+                }
+            }
+            temp = array[i];
+            array[i] = array[smallPos];
+            array[smallPos] = temp;
+        }
+    }
+
     public static void main(String[] args) {
         int array[] = { 5, 4, 1, 3, 2 };
 
-        bubbleSort(array);
+        selectionSort(array);
 
-        for(int i = 0; i<array.length; i++){
-            System.err.print(array[i]+" ");
+        for (int i = 0; i < array.length; i++) {
+            System.err.print(array[i] + " ");
         }
     }
 }
