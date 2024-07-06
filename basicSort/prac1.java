@@ -81,7 +81,7 @@ public class prac1 {
         insertionSort(array);
 
         for (int i = 0; i < array.length; i++) {
-            System.err.print(array[i] + " ");
+            System.out.print(array[i] + " ");
         }
     }
 }
