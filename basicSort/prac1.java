@@ -38,10 +38,26 @@ public class prac1 {
         }
     }
 
-    public static void main(String[] args) {
-        int array[] = { 5, 4, 1, 3, 2 };
+    // func for insertion sort-as per my logic
+    public static void insertionSort(int arr[]) {
+        int temp;
+        int n = arr.length;
 
-        selectionSort(array);
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int array[] = { 5, 7, 1, 3, 2 };
+
+        insertionSort(array);
 
         for (int i = 0; i < array.length; i++) {
             System.err.print(array[i] + " ");
