@@ -39,7 +39,7 @@ public class prac1 {
     }
 
     // func for insertion sort-as per my logic
-    public static void insertionSort(int arr[]) {
+    public static void insertion_Sort(int arr[]) {
         int temp;
         int n = arr.length;
 
@@ -51,6 +51,27 @@ public class prac1 {
                     arr[j - 1] = temp;
                 }
             }
+        }
+    }
+
+    // func for insertion sort-as per my logic
+    public static void insertionSort(int arr[]) {
+        int current;
+        int prev;
+        int n = arr.length;
+
+        for (int i = 1; i < n; i++) {
+            current = arr[i];
+            prev = i - 1;
+
+            // finding current position to insert
+            while (prev >= 0 && arr[prev] > current) {
+                arr[prev + 1] = arr[prev];
+                prev--;
+            }
+
+            // insertion
+            arr[prev + 1] = current;
         }
     }
 
