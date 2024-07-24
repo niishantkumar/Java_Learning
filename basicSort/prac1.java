@@ -75,10 +75,16 @@ public class prac1 {
         }
     }
 
-    public static void main(String[] args) {
-        int array[] = { 5, 7, 1, 3, 2 };
+    //counting sort
+    public static void countingSort(int arr[]){
 
-        insertionSort(array);
+    }
+    
+
+    public static void main(String[] args) {
+        int array[] = { 5, 7, 1, 8, 2 };
+
+        //bs(array);
 
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
