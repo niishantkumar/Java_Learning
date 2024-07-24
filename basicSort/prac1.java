@@ -75,16 +75,37 @@ public class prac1 {
         }
     }
 
-    //counting sort
-    public static void countingSort(int arr[]){
+    // counting sort
+    public static void countingSort(int arr[]) {
+        int largest = Integer.MIN_VALUE;
+        int length = arr.length;
 
+        // finding largest element
+        for (int i = 0; i < length; i++) {
+            largest = Integer.max(largest, arr[i]);
+        }
+
+        int count[] = new int[largest + 1];
+
+        for (int i = 0; i < length; i++) {
+            count[arr[i]]++;
+        }
+
+        // sorting
+        int j = 0;
+        for (int i = 0; i < count.length; i++) {
+            while (count[i] > 0) {
+                arr[j] = i;
+                j++;
+                count[i]--;
+            }
+        }
     }
-    
 
     public static void main(String[] args) {
-        int array[] = { 5, 7, 1, 8, 2 };
+        int array[] = { 3, 6, 2, 1, 8, 7, 4, 5, 3, 1 };
 
-        //bs(array);
+        countingSort(array);
 
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
