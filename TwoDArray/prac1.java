@@ -5,7 +5,7 @@ import java.util.Scanner;
 //creation of 2D Array
 
 public class prac1 {
-    public static void main(String Args[]) {
+    public static void main(String[] args) {
         int matrix[][] = new int[3][3];
 
         int rows = matrix.length;
