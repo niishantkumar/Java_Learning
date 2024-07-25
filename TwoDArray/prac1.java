@@ -27,5 +27,7 @@ public class prac1 {
             }
             System.out.println();
         }
+
+        sc.close();
     }
 }
