@@ -55,8 +55,7 @@ public class prac2 {
         if (binSearch(matrix, key)[0] == -1) {
             System.out.println("Not Found !");
         } else {
-            System.out
-                    .println("Element found at index : " + binSearch(matrix, key)[0] + "," + binSearch(matrix, key)[1]);
+            System.out.println("Element found at index : " + binSearch(matrix, key)[0] + "," + binSearch(matrix, key)[1]);
         }
     }
 }
