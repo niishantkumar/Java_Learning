@@ -7,7 +7,7 @@ public class prac6 {
     public static void diagonalSum(int matrix[][]) {
 
         int startRow = 0, startCol = 0;
-        int endRow = matrix.length - 1, endCol = matrix[0].length - 1;
+        int endRow = matrix.length - 1;
 
         // sum of primary diagonal
         int sum = 0;
