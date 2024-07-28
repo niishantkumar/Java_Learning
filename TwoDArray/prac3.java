@@ -18,12 +18,18 @@ public class prac3 {
         while (tElements < ((tRows + 1) * (tCols + 1))) {
             // loop for upper row
             for (int i = rowRelated_updation; i <= tCols - rowRelated_updation; i++) {
+                if ((upperRow == lowerRow)) {
+                    break;
+                }
                 System.out.print(arr[upperRow][i] + " ");
                 tElements++;
             }
 
             // loop for right col
             for (int i = colRelated_updation; i <= tRows - colRelated_updation; i++) {
+                if (rightCol == leftCol) {
+                    break;
+                }
                 System.out.print(arr[i][rightCol] + " ");
                 tElements++;
             }
@@ -51,7 +57,8 @@ public class prac3 {
     }
 
     public static void main(String[] args) {
-        int matrix[][] = { { 1, 2, 3, 4, 22 }, { 5, 6, 7, 8 , 23}, { 9, 10, 11, 12,24 }, { 13, 14, 15, 16,25 }, {17, 18, 19, 20, 21}};
+        int matrix[][] = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 },
+        { 21, 22, 23, 24, 25 } };
 
         // displaying matrix
         for (int i = 0; i < matrix.length; i++) {
