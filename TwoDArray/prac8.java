@@ -5,7 +5,7 @@ import java.util.Scanner;
 //searching in a 2D array
 
 public class prac8 {
-    // func for searching
+    // func for searching from up to down
     public static void staircaseSearch(int arr[][], int key) {
         int row = 0, col = arr[0].length - 1;
 
@@ -13,16 +13,28 @@ public class prac8 {
             if (arr[row][col] == key) {
                 System.out.println("Found at " + row + "," + col);
                 break;
-            } 
-            else if (arr[row][col] > key) {
+            } else if (arr[row][col] > key) {
                 col--;
-            }
-            else {
+            } else {
                 row++;
             }
-
         }
+    }
 
+    // func for searching from down to up
+    public static void staircaseSearch2(int arr[][], int key) {
+        int row = arr.length - 1, col = 0;
+
+        while (row >= 0 && col < arr[0].length) {
+            if (arr[row][col] == key) {
+                System.out.println("Found at " + row + "," + col);
+                break;
+            } else if (arr[row][col] > key) {
+                row--;
+            } else {
+                col++;
+            }
+        }
     }
 
     // main func
@@ -39,7 +51,7 @@ public class prac8 {
         System.out.print("Enter key : ");
         key = sc.nextInt();
 
-        staircaseSearch(arr, key);
+        staircaseSearch2(arr, key);
 
         sc.close();
     }
