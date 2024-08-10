@@ -40,5 +40,7 @@ public class prac1 {
         key = sc.nextInt();
 
         System.out.println(key + " occurs " + occurance_Seven(arr, key));
+
+        sc.close();
     }
 }
