@@ -13,10 +13,11 @@ public class prac8 {
         convrtString.append(Character.toUpperCase(str.charAt(0)));
 
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == ' ') {
+            if (str.charAt(i) == ' ' && i < str.length() - 1) {
                 convrtString.append(str.charAt(i));
-                convrtString.append(Character.toUpperCase(str.charAt(i + 1)));
                 i++;
+                convrtString.append(Character.toUpperCase(str.charAt(i)));
+
             } else {
                 convrtString.append(str.charAt(i));
             }
