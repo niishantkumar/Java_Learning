@@ -21,11 +21,21 @@ public class prac3 {
         System.out.println(num);
     }
 
+    // func to clear ith bit
+    public static void clear_ithBit(int num, int i) {
+        int bitMask = ~(1 << i);
+
+        num = num & bitMask;
+
+        System.out.println(num);
+    }
+
     // main func
     public static void main(String[] args) {
 
         // func call
         get_ithBit(10, 2);
         set_ithBit(10, 1, 2);
+        clear_ithBit(10, 1);
     }
 }
