@@ -4,7 +4,7 @@ package Java_Learning.BitManipulation;
 
 public class prac3 {
     // func to find ith bit
-    public static void ithBit(int num, int i) {
+    public static void get_ithBit(int num, int i) {
         if ((num & (1 << i)) == 0) {
             System.out.println("ith bit is 0");
         } else {
@@ -12,8 +12,19 @@ public class prac3 {
         }
     }
 
+    // func to set ith bit
+    public static void set_ithBit(int num, int setNum, int i) {
+        int bitMask = setNum << i;
+
+        num = num | bitMask;
+
+        System.out.println(num);
+
+    }
+
     // main func
     public static void main(String[] args) {
-        ithBit(10, 2);
+        get_ithBit(10, 2);
+        set_ithBit(10, 1, 2);
     }
 }
