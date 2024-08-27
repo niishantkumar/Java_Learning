@@ -19,11 +19,12 @@ public class prac3 {
         num = num | bitMask;
 
         System.out.println(num);
-
     }
 
     // main func
     public static void main(String[] args) {
+
+        // func call
         get_ithBit(10, 2);
         set_ithBit(10, 1, 2);
     }
