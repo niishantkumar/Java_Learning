@@ -13,8 +13,8 @@ public class prac3 {
     }
 
     // func to set ith bit
-    public static void set_ithBit(int num, int setNum, int i) {
-        int bitMask = setNum << i;
+    public static void set_ithBit(int num, int i) {
+        int bitMask = 1 << i;
 
         num = num | bitMask;
 
@@ -35,7 +35,7 @@ public class prac3 {
 
         // func call
         get_ithBit(10, 2);
-        set_ithBit(10, 1, 2);
+        set_ithBit(10, 2);
         clear_ithBit(10, 1);
     }
 }
