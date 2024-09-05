@@ -39,5 +39,7 @@ public class prac4 {
     // main func
     public static void main(String[] args) {
 
+        System.out.println("10 after updation : " + updateIthBit(10, 2, 1));
+
     }
 }
