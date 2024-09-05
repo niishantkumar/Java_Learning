@@ -19,7 +19,8 @@ public class prac4 {
     }
 
     // func to update ith bit
-    public static int updateIthBit(int num, int i, int newbit) {
+    public static int updateIthBit(int num, int i, int newbit) { // num : number to be updated, i : positin of bit,
+                                                                 // newBit updation value
 
         // 1st approach
         // if (newbit == 0) {
