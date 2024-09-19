@@ -27,7 +27,7 @@ class pen {
     }
 
     void display() {
-        System.err.println("The color is : " + color);
-        System.err.println("The size is : " + size);
+        System.out.println("The color is : " + color);
+        System.out.println("The size is : " + size);
     }
 }
