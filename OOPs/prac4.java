@@ -8,8 +8,8 @@ public class prac4 {
 
     public static void main(String[] args) {
 
-        student std1 = new student();
-        student std2 = new student();
+        Student std1 = new Student();
+        Student std2 = new Student();
 
         System.out.println("Details of student are : ");
         std1.getData();
@@ -19,7 +19,7 @@ public class prac4 {
 
 }
 
-class student {
+class Student {
     int enroll;
     String name;
     String course;
