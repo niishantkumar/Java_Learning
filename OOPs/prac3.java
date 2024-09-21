@@ -12,7 +12,6 @@ public class prac3 {
 
         System.out.println("Acc holder name : " + user1.name);
         System.out.println("Pass : " + user1.getPass());
-
     }
 }
 
