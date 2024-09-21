@@ -25,7 +25,7 @@ class Student {
     String course;
     Scanner sc = new Scanner(System.in);
 
-    student() {
+    Student() {
         System.out.print("Enter enroll : ");
         enroll = sc.nextInt();
         sc.nextLine(); // when we take input of an int and press enter, it(enter) is received in the
