@@ -58,7 +58,7 @@ class Student {
         System.out.println("Name : " + name);
         System.out.println("Marks :");
         for (int i = 0; i < marks.length; i++) {
-            System.out.print(this.marks[i] + " ");
+            System.out.print(marks[i] + " ");
         }
         System.out.println("\n");
     }
