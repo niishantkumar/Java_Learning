@@ -1,6 +1,6 @@
 package Java_Learning.OOPs;
 
-//abstract class
+//abstract class and abstract func
 
 public class prac11 {
     public static void main(String[] args) {
