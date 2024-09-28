@@ -5,8 +5,10 @@ package Java_Learning.OOPs;
 public class prac14 {
 
     public static void main(String[] args) {
-        Student s1 = new Student("Nishant", 1);
+
         Student.school = "DAV Pundag";
+        Student s1 = new Student("Nishant", 1);
+
         s1.getData();
         System.out.println("Percentage : " + Student.percentage(49, 48, 47));
 
