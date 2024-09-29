@@ -5,6 +5,7 @@ package Java_Learning.OOPs;
 public class prac16 {
 
     public static void main(String[] args) {
+        @SuppressWarnings("unused")
         Animal a1 = new Animal();
     }
 
