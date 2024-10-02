@@ -12,9 +12,7 @@ public class prac3 {
             return 1;
         }
 
-        int factorial = fact(n - 1) * n;
-
-        return factorial;
+        return (fact(n - 1) * n);
     }
 
     // main func
