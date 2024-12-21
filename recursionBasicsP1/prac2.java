@@ -1,5 +1,3 @@
-package Java_Learning.recursionBasicsP1;
-
 //print numbers from 1 to n (increasing order)
 
 public class prac2 {
