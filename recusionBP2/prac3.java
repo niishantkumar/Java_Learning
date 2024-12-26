@@ -22,7 +22,7 @@ public class prac3 {
         }
 
         int fSingle = pairingFriends(n - 1);
-        int fPair = fSingle * pairingFriends(n - 2);
+        int fPair = (n - 1) * pairingFriends(n - 2);
 
         return fSingle + fPair;
     }
