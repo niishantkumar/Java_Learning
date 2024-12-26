@@ -6,17 +6,17 @@ import java.util.Scanner;
 
 public class prac4 {
 
-    public static boolean printBinStr(String str, int n) {
+    public static void printBinStr(String str, int n) {
         if (n == str.length() - 1) {
             System.out.println("Srint is : " + str);
-            return true;
+            return;
         }
 
         if (str.charAt(n) == str.charAt(n + 1) && str.charAt(n) == '1') {
-            return false;
+            return;
         }
 
-        return printBinStr(str, n + 1);
+        printBinStr(str, n + 1);
     }
 
     public static void main(String[] args) {
