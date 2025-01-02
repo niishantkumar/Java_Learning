@@ -32,17 +32,19 @@ public class prac2 {
         }
         i++;
 
-        temp = pivot;
+        temp = pivot; // this line is not necessary but using temp is not wrong and can sometimes make
+                      // the logic easier to follow, especially for debugging or understanding the
+                      // code in larger contexts.
         arr[ei] = arr[i];
-        arr[i] = temp;
+        arr[i] = pivot;
 
         return i;
     }
 
     public static void main(String[] args) {
-        int arr[] = { 4, 23, 1, 4, 6, 6, 2, 7, 8, 3, 2 };
+        int arr[] = { 4, 23, 1, 4, 6, 6, 2, 7, 8, 3, 2, 6 };
 
-        quickSort(arr, 0, arr.length-1);
+        quickSort(arr, 0, arr.length - 1);
 
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
