@@ -95,7 +95,7 @@ public class prac3 {
 // for descending order
 class secMthd {
     // merge sort
-    public static void mergeSort(String arr[], int si, int ei) {
+    void mergeSort(String arr[], int si, int ei) {
         if (si >= ei) {
             return;
         }
@@ -109,7 +109,7 @@ class secMthd {
     }
 
     // func for merge
-    public static void merge(String arr[], int si, int mid, int ei) {
+    void merge(String arr[], int si, int mid, int ei) {
         String temp[] = new String[ei - si + 1];
 
         int i = si; // iterator for left part
