@@ -1,6 +1,7 @@
 package Java_Learning.DivideAndConquer.pracQues;
 
 // Apply Merge sort to sort an array of Strings.
+
 // (Assume that all the characters in all the Strings are in lowercase). (EASY)
 
 public class prac3 {
@@ -72,9 +73,71 @@ public class prac3 {
         // sorting of arr
         mergeSort(arr, 0, arr.length - 1);
 
-        // printing of sorted arr
+        // printing of ascending sorted arr
+        System.out.println("Ascending :");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        secMthd m2 = new secMthd();
+        m2.mergeSort(arr, 0, arr.length - 1);
+
+        // printing of descending sorted arr
+        System.out.println("Descending :");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}
+
+// for descending order
+class secMthd {
+    // merge sort
+    public static void mergeSort(String arr[], int si, int ei) {
+        if (si >= ei) {
+            return;
+        }
+
+        int mid = si + (ei - si) / 2;
+
+        mergeSort(arr, si, mid);
+        mergeSort(arr, mid + 1, ei);
+
+        merge(arr, si, mid, ei);
+    }
+
+    // func for merge
+    public static void merge(String arr[], int si, int mid, int ei) {
+        String temp[] = new String[ei - si + 1];
+
+        int i = si; // iterator for left part
+        int j = mid + 1; // iterator for right part
+        int k = 0; // iterator for temp
+
+        // Merge the two halves into the temp array
+        while (i <= mid && j <= ei) {
+            if (arr[i].compareTo(arr[j]) > 0) {
+                temp[k++] = arr[i++];
+            } else {
+                temp[k++] = arr[j++];
+            }
+        }
+
+        // Copy the remaining elements from the left part
+        while (i <= mid) {
+            temp[k++] = arr[i++];
+        }
+
+        // Copy the remaining elements from the right part
+        while (j <= ei) {
+            temp[k++] = arr[j++];
+        }
+
+        // Copy the sorted elements back into the original array
+        for (i = 0, j = si; i < k; i++, j++) {
+            arr[j] = temp[i];
         }
     }
 }
