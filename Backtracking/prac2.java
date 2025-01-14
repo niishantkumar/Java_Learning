@@ -11,7 +11,7 @@ public class prac2 {
             if (ans.length() == 0) {
                 System.out.println("Null");
             } else {
-                System.err.println(ans);
+                System.out.println(ans);
             }
 
             return;
