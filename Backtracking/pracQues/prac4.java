@@ -1,6 +1,7 @@
 package Java_Learning.Backtracking.pracQues;
 
 //rat problem
+//prefered
 
 public class prac4 {
     // print 2D array
