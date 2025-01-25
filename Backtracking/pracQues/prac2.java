@@ -13,20 +13,20 @@ public class prac2 {
             System.out.println("");
             return;
         }
-        bfs(0, len, new StringBuilder(), D);
+        bfs(0, len, "", D);
     }
 
-    public static void bfs(int pos, int len, StringBuilder sb, String D) {
+    public static void bfs(int pos, int len, String outputStr, String D) {
         if (pos == len) {
-            System.out.println(sb.toString());
+            System.out.println(outputStr);
         } else {
-            char[] letters = L[Character.getNumericValue(D.charAt(pos))];
+            char[] letters = L[D.charAt(pos) - '0']; //char - char = number value
             for (int i = 0; i < letters.length; i++)
-                bfs(pos + 1, len, new StringBuilder(sb).append(letters[i]), D);
+                bfs(pos + 1, len, outputStr+letters[i], D);
         }
     }
 
     public static void main(String args[]) {
-        letterCombinations("234");
+        letterCombinations("23");
     }
 }
