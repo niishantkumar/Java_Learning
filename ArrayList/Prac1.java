@@ -35,6 +35,16 @@ public class Prac1 {
         list.set(0, 2);
         System.out.println(list);
 
+        // size of arrayList
+        System.out.println("Size of list is : " + list.size());
+
+        // loop to print elements in reverse
+        System.out.println();
+        System.out.println("Elements of ArrayList in reverse :");
+        for (int i = list.size() - 1; i >= 0; i--) {
+            System.out.print(list.get(i) + " ");
+        }
+
     }
 
 }
