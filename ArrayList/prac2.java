@@ -21,7 +21,7 @@ public class prac2 {
             max = Math.max(max, list.get(i));
         }
 
-        System.out.println(max);
+        System.out.println("Max element in ArrayList is : " + max);
     }
 
 }
