@@ -55,6 +55,8 @@ public class Prac5 {
             }
             System.out.println();
         }
+
+        System.out.println(table);
     }
 
 }
