@@ -3,6 +3,7 @@ package Java_Learning.ArrayList;
 import java.util.ArrayList;
 
 //pair sum - 1 (Brute Force)
+//O(n^2)
 
 public class Prac8 {
 
