@@ -9,18 +9,18 @@ public class Prac9 {
 
     // func to check pair sum
     static void pairSum(ArrayList<Integer> list, int tgt) {
-        int fstTerm = 0;
-        int lstTerm = list.size() - 1;
+        int rightPtr = 0;
+        int leftPtr = list.size() - 1;
 
-        while (fstTerm < lstTerm) {
+        while (rightPtr != leftPtr) {
 
-            if (list.get(fstTerm) + list.get(lstTerm) == tgt) {
-                System.out.println(list.get(fstTerm) + " + " + list.get(lstTerm) + " = " + tgt);
+            if (list.get(rightPtr) + list.get(leftPtr) == tgt) {
+                System.out.println(list.get(rightPtr) + " + " + list.get(leftPtr) + " = " + tgt);
                 return;
-            } else if (list.get(fstTerm) + list.get(lstTerm) < tgt) {
-                fstTerm++;
+            } else if (list.get(rightPtr) + list.get(leftPtr) < tgt) {
+                rightPtr++;
             } else {
-                lstTerm--;
+                leftPtr--;
             }
 
         }
