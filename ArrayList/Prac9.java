@@ -2,7 +2,8 @@ package Java_Learning.ArrayList;
 
 import java.util.ArrayList;
 
-//pair sum - 1 (Brute Force)
+//pair sum - 1 (pointer method)
+//O(n)
 
 public class Prac9 {
 
