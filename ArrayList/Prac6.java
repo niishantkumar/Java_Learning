@@ -13,7 +13,7 @@ public class Prac6 {
         int width = 0;
         int tempVol = 0;
 
-        for (int i = 0; i < height.size(); i++) {
+        for (int i = 0; i < height.size() - 1; i++) {
             for (int j = i + 1; j < height.size(); j++) {
                 maxHeight = Math.min(height.get(i), height.get(j));
                 width = j - i;
