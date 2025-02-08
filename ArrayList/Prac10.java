@@ -2,7 +2,7 @@ package Java_Learning.ArrayList;
 
 import java.util.ArrayList;
 
-//pair sum - 1 (pointer method)
+//pair sum - 2 (pointer method)
 //O(n)
 
 public class Prac10 {
