@@ -15,6 +15,53 @@ package Java_Learning.ArrayList.pracQues;
   Sample Output 3: false
  */
 
-public class Prac1 {
+import java.util.ArrayList;
 
+public class Prac1 {
+    // func to check whether ArrayList is monotone
+    static boolean isMonotone(ArrayList<Integer> list) {
+        boolean isIncreasing = true;
+        boolean isDecreasing = true;
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i) < list.get(i + 1)) {
+                isDecreasing = false; // it's not decreasing, so flag as false
+            }
+            if (list.get(i) > list.get(i + 1)) {
+                isIncreasing = false; // it's not increasing, so flag as false
+            }
+        }
+
+        // If it's either increasing or decreasing, it's monotonic
+        return isIncreasing || isDecreasing;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        // Sample Input 1
+        list.add(1);
+        list.add(2);
+        list.add(2);
+        list.add(3);
+
+        System.out.println(isMonotone(list)); // Expected output: true
+
+        // Sample Input 2
+        list.clear();
+        list.add(6);
+        list.add(5);
+        list.add(4);
+        list.add(4);
+
+        System.out.println(isMonotone(list)); // Expected output: true
+
+        // Sample Input 3
+        list.clear();
+        list.add(1);
+        list.add(3);
+        list.add(2);
+
+        System.out.println(isMonotone(list)); // Expected output: false
+    }
 }
