@@ -25,12 +25,12 @@ public class Prac5 {
 
 class Solution {
     public int mostFrequent(ArrayList<Integer> nums, int key) {
-        int[] result = new int[1000]; // Frequency array
+        int[] result = new int[1001]; // Frequency array
 
         // Count occurrences of numbers appearing after 'key'
         for (int i = 0; i < nums.size() - 1; i++) {
             if (nums.get(i) == key) {
-                result[nums.get(i + 1) - 1]++;
+                result[nums.get(i + 1)]++;
             }
         }
 
@@ -41,7 +41,7 @@ class Solution {
         for (int i = 0; i < 1000; i++) {
             if (result[i] > max) {
                 max = result[i];
-                ans = i + 1;
+                ans = i;
             }
         }
 
