@@ -2,6 +2,8 @@ package Java_Learning.ArrayList.pracQues;
 
 //Lonely ques
 //optimized method
+//O(n log n) (due to sorting)
+//O(1) (modifies input in place)
 
 import java.util.ArrayList;
 import java.util.Collections;;
