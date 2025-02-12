@@ -15,6 +15,9 @@ package Java_Learning.ArrayList.pracQues;
   Sample Output 3: false
  */
 
+ //tc : O(n)
+ //sc : O(1)
+
 import java.util.ArrayList;
 
 public class Prac1 {
