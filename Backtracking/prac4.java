@@ -44,7 +44,7 @@ public class prac4 {
             if (isSafe(board, row, j)) {
                 board[row][j] = 'Q';
                 setQueen(board, row + 1);
-                board[row][j] = 'X'; //backtracking
+                board[row][j] = 'X'; // backtracking
             }
 
         }
@@ -55,7 +55,7 @@ public class prac4 {
 
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
-                System.out.print(board[i][j]+" ");
+                System.out.print(board[i][j] + " ");
             }
             System.out.println();
         }
@@ -70,7 +70,7 @@ public class prac4 {
 
         char board[][] = new char[n][n];
 
-        //setting default value
+        // setting default value
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
                 board[i][j] = 'X';
