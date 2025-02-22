@@ -35,8 +35,8 @@ class LinkedList {
         }
     }
 
-    static Node head;
-    static Node tail;
+    Node head;
+    Node tail;
 
     // func to calc size of linkedList
     int size() {
