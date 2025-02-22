@@ -1,5 +1,7 @@
 package Java_Learning.linkedListP1;
 
+import java.util.NoSuchElementException;
+
 public class Prac1 {
 
     public static void main(String[] args) {
@@ -7,32 +9,32 @@ public class Prac1 {
 
         sll.insertFront(2);
         sll.insertFront(1);
-        sll.insertENd(3);
-        sll.insertENd(4);
-        sll.InsertMiddle(2, 8);
+        sll.insertEnd(3);
+        sll.insertEnd(4);
+        sll.insertMiddle(2, 8);
 
-        LinkedList.print();
-        System.out.println("Size of linked list is : " + LinkedList.size);
+        sll.print();
+        System.out.println("Size of linked list is : " + sll.getSize());
 
         sll.removeFirst();
-        LinkedList.print();
-        System.out.println("Size of linked list is : " + LinkedList.size);
+        sll.print();
+        System.out.println("Size of linked list is : " + sll.getSize());
 
         sll.removeLast();
-        LinkedList.print();
-        System.out.println("Size of linked list is : " + LinkedList.size);
+        sll.print();
+        System.out.println("Size of linked list is : " + sll.getSize());
 
-        System.out.println("3 found at " + sll.itrSearch(3));
-        System.out.println("2 found at " + sll.recurSearch(2));
+        System.out.println("3 found at index: " + sll.iterativeSearch(3));
+        System.out.println("2 found at index: " + sll.recursiveSearch(2));
 
-        sll.revsLinkedList();
-        LinkedList.print();
+        sll.reverseLinkedList();
+        sll.print();
+        System.out.println("Size of linked list is : " + sll.getSize());
     }
-
 }
 
 class LinkedList {
-    static class Node {
+    private class Node {
         int data;
         Node next;
 
@@ -42,150 +44,130 @@ class LinkedList {
         }
     }
 
-    static Node head;
-    static Node tail;
-    static int size;
+    private Node head;
+    private Node tail;
+    private int size;
 
-    /**************** ADD NODE*************** */
+    public int getSize() {
+        return size;
+    }
 
-    // func to add node at front
-    void insertFront(int data) { // O(1)
-        // creating new node
+    /**************** ADD NODE ***************/
+
+    public void insertFront(int data) {
         Node newNode = new Node(data);
         size++;
 
-        // if linkedList if empty
         if (head == null) {
             head = tail = newNode;
             return;
         }
 
-        // if nodes are there in linked list
         newNode.next = head;
         head = newNode;
     }
 
-    // func to add node at end
-    void insertENd(int data) { // O(1)
-        // creating new node
+    public void insertEnd(int data) {
         Node newNode = new Node(data);
         size++;
 
-        // if linkedList if empty
         if (head == null) {
             head = tail = newNode;
             return;
         }
 
-        // if nodes are there in linked list
         tail.next = newNode;
         tail = newNode;
     }
 
-    // func to insert in the middle
-    void InsertMiddle(int pos, int data) {
+    public void insertMiddle(int pos, int data) {
+        if (pos < 0 || pos > size) {
+            System.out.println("Invalid position");
+            return;
+        }
 
         if (pos == 0) {
             insertFront(data);
             return;
         }
 
-        // create new Node
         Node newNode = new Node(data);
         size++;
 
         Node temp = head;
-
-        int i = 0;
-        while (i < pos - 1) {
+        for (int i = 0; i < pos - 1; i++) {
             temp = temp.next;
-            i++;
         }
 
         newNode.next = temp.next;
         temp.next = newNode;
+
+        if (newNode.next == null) {
+            tail = newNode;
+        }
     }
 
     /*********** REMOVE NODE ****************/
 
-    // func to remove 1st node
-    int removeFirst() {
-
+    public int removeFirst() {
         if (size == 0) {
-            System.out.println("LinkedList is empty");
-            return Integer.MIN_VALUE; // just to show that sll is empty and no valid value exists in it
-        }
-
-        if (size == 1) {
-            int value = head.data;
-            head = tail = null;
-            size = 0;
-
-            return value;
+            throw new NoSuchElementException("LinkedList is empty");
         }
 
         int value = head.data;
         head = head.next;
         size--;
 
-        return value;
+        if (size == 0) {
+            tail = null;
+        }
 
+        return value;
     }
 
-    // func to remove lst node
-    int removeLast() {
-
+    public int removeLast() {
         if (size == 0) {
-            System.out.println("LinkedList is empty");
-            return Integer.MIN_VALUE; // just to show that sll is empty and no valid value exists in it
+            throw new NoSuchElementException("LinkedList is empty");
         }
 
         if (size == 1) {
             int value = head.data;
             head = tail = null;
             size = 0;
-
             return value;
         }
 
-        // prev ind = size - 2
         Node prev = head;
         for (int i = 0; i < size - 2; i++) {
             prev = prev.next;
         }
 
-        int value = prev.next.data; // tail.data
+        int value = tail.data;
         prev.next = null;
         tail = prev;
         size--;
 
         return value;
-
     }
 
     /********** SEARCHING IN A LINKED LIST **************/
 
-    // func for iterative search
-    int itrSearch(int key) {
-
+    public int iterativeSearch(int key) {
         Node temp = head;
-        int i = 0;
+        int index = 0;
 
         while (temp != null) {
             if (temp.data == key) {
-                return i;
+                return index;
             }
-
             temp = temp.next;
-            i++;
+            index++;
         }
 
         return -1;
     }
 
-    // func for recursive search
-    // helper function
-    int helper(Node temp, int key) {
+    private int recursiveHelper(Node temp, int key) {
         if (temp == null) {
             return -1;
         }
@@ -193,24 +175,24 @@ class LinkedList {
             return 0;
         }
 
-        int ind = helper(temp.next, key);
+        int index = recursiveHelper(temp.next, key);
 
-        if (ind == -1) {
-            return -1;
-        }
-
-        return ind + 1;
-
+        return (index == -1) ? -1 : index + 1;
     }
 
-    int recurSearch(int key) {
-        return helper(head, key);
+    public int recursiveSearch(int key) {
+        return recursiveHelper(head, key);
     }
 
     /********** REVERSE LINKED LIST **************/
-    void revsLinkedList() {
+
+    public void reverseLinkedList() {
+        if (head == null || head.next == null) {
+            return;
+        }
+
         Node prev = null;
-        Node curr = tail = head;
+        Node curr = head;
         Node next;
 
         while (curr != null) {
@@ -220,11 +202,13 @@ class LinkedList {
             curr = next;
         }
 
+        tail = head;
         head = prev;
     }
 
-    // func to print Linked List
-    static void print() { // O(n)
+    /********** PRINT LINKED LIST **************/
+
+    public void print() {
         Node temp = head;
 
         while (temp != null) {
