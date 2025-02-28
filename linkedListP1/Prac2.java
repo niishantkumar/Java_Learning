@@ -1,6 +1,7 @@
 package Java_Learning.linkedListP1;
 
 //to delete nth node from end
+//tc : O(2n)  sc : O(1)
 
 public class Prac2 {
     public static void main(String[] args) {
