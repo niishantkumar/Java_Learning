@@ -4,6 +4,16 @@ package Java_Learning.linkedListP2;
 
 public class Prac2 {
 
+    public static void main(String[] args) {
+
+        LinkedList sll = new LinkedList();
+
+        sll.cycle();
+        sll.print();
+
+        sll.removeCycle();
+        sll.print();
+    }
 }
 
 class LinkedList {
@@ -38,26 +48,54 @@ class LinkedList {
         head = new Node(1);
         head.next = new Node(2);
         head.next.next = new Node(3);
-        head.next.next.next = head;
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = head.next;
     }
 
-    // func to detect a cycle in linkedList
-    boolean isCycle() {
-
+    // func to remove cycle in linkedList
+    void removeCycle() {
         Node slow = head;
         Node fast = head;
 
         // detect cycle
+        boolean isCycle = false;
         while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
 
-            slow = slow.next; // one step forward
-            fast = fast.next.next; // two step forward
-
-            if (fast == slow) {
-                return true;// cycle exists
+            if (slow == fast) {
+                isCycle = true;
+                break;
             }
         }
 
-        return false;// cycle does not exist
+        if (isCycle == false) {
+            return;
+        }
+
+        // find meeting point
+        slow = head;
+        Node prev = null; // last node
+        while (slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // remove cycle : last.next = null
+        prev.next = null;
+    }
+
+    // func to print linkedList
+    void print() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+
+        System.out.println("null");
+
     }
 }
