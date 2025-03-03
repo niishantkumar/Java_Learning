@@ -9,7 +9,6 @@ public class Prac2 {
         LinkedList sll = new LinkedList();
 
         sll.cycle();
-        sll.print();
 
         sll.removeCycle();
         sll.print();
