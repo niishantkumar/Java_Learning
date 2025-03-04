@@ -15,7 +15,15 @@ public class Prac3 {
         sll.addLast(3);
         sll.addFirst(1);
         sll.addFirst(2);
+        sll.addLast(null);
 
+        // print
+        System.out.println(sll);
+
+        // remove
+        sll.removeLast();
+
+        // print
         System.out.println(sll);
     }
 
