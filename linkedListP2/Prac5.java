@@ -1,5 +1,7 @@
 package Java_Learning.linkedListP2;
 
+//zig-zag linked list code
+
 public class Prac5 {
     public static void main(String[] args) {
         LinkedList sll = new LinkedList();
