@@ -24,16 +24,16 @@ public class Prac6 {
         dll.reverse();
         dll.print();
     }
-    
+
 }
 
-class LinkedList{
-    class Node{
+class LinkedList {
+    class Node {
         int data;
         Node next;
         Node prev;
 
-        Node(int data){
+        Node(int data) {
             this.data = data;
             this.next = null;
             this.prev = null;
@@ -43,10 +43,24 @@ class LinkedList{
     Node head;
     Node tail;
 
-    /************ADD NODE*************/
+    // func to calc size
+    int size() {
+        int size = 0;
 
-    //func to add Node at front
-    void addFront(int data){
+        Node temp = head;
+
+        while (temp != null) {
+            size++;
+            temp = temp.next;
+        }
+
+        return size;
+    }
+
+    /************ ADD NODE *************/
+
+    // func to add Node at front
+    void addFront(int data) {
         Node newNode = new Node(data);
 
         if (head == null) {
@@ -59,8 +73,8 @@ class LinkedList{
         head = newNode;
     }
 
-    //func to add Node at end
-    void addEnd(int data){
+    // func to add Node at end
+    void addEnd(int data) {
         Node newNode = new Node(data);
 
         if (head == null) {
@@ -73,16 +87,46 @@ class LinkedList{
         tail = newNode;
     }
 
-    /************REMOVE NODE***************/
+    // func to add node in middle
+    public void insertMiddle(int pos, int data) {
+        if (pos < 0 || pos > size()) {
+            System.out.println("Invalid position");
+            return;
+        }
 
-    //func to remove 1st node
-    void removeFirst(){
+        if (pos == 0) { // Insert at the front
+            addFront(data);
+            return;
+        }
+
+        if (pos == size()) { // Insert at the end
+            addEnd(data);
+            return;
+        }
+
+        Node newNode = new Node(data);
+        Node temp = head;
+
+        for (int i = 0; i < pos - 1; i++) {
+            temp = temp.next;
+        }
+
+        newNode.next = temp.next;
+        newNode.prev = temp;
+        temp.next.prev = newNode;
+        temp.next = newNode;
+    }
+
+    /************ REMOVE NODE ***************/
+
+    // func to remove 1st node
+    void removeFirst() {
         if (head == null) {
             System.out.println("Empty");
             return;
         }
 
-        if (head.next == null) { //if only one node
+        if (head.next == null) { // if only one node
             head = tail = null;
             return;
         }
@@ -91,14 +135,14 @@ class LinkedList{
         head.prev = null;
     }
 
-    //func to remove last node
-    void removeLast(){
+    // func to remove last node
+    void removeLast() {
         if (head == null) {
             System.out.println("Empty");
             return;
         }
 
-        if (head.next == null) { //if only one node
+        if (head.next == null) { // if only one node
             head = tail = null;
             return;
         }
@@ -107,8 +151,8 @@ class LinkedList{
         tail.next = null;
     }
 
-    /***********REVERSE DLL*************/
-    void reverse(){
+    /*********** REVERSE DLL *************/
+    void reverse() {
         if (head == null || head.next == null) {
             return;
         }
@@ -130,8 +174,8 @@ class LinkedList{
         head = prev;
     }
 
-    //func to print dll
-    void print(){
+    // func to print dll
+    void print() {
         if (head == null) {
             System.out.println("Empty");
             return;
@@ -139,7 +183,7 @@ class LinkedList{
 
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data+"<->");
+            System.out.print(temp.data + "<->");
             temp = temp.next;
         }
 
