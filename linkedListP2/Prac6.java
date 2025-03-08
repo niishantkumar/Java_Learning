@@ -16,11 +16,12 @@ public class Prac6 {
         dll.print();
 
         dll.removeFirst();
-
         dll.print();
 
         dll.removeLast();
+        dll.print();
 
+        dll.reverse();
         dll.print();
     }
     
@@ -104,6 +105,29 @@ class LinkedList{
 
         tail = tail.prev;
         tail.next = null;
+    }
+
+    /***********REVERSE DLL*************/
+    void reverse(){
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+
+            prev = curr;
+            curr = next;
+        }
+
+        tail = head;
+        head = prev;
     }
 
     //func to print dll
