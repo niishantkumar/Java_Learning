@@ -75,12 +75,12 @@ class LinkedList {
 
     // func to add Node at end
     void addEnd(int data) {
-        Node newNode = new Node(data);
-
         if (head == null) {
             addFront(data);
             return;
         }
+
+        Node newNode = new Node(data);
 
         tail.next = newNode;
         newNode.prev = tail;
@@ -88,7 +88,7 @@ class LinkedList {
     }
 
     // func to add node in middle
-    public void insertMiddle(int pos, int data) {
+    void insertMiddle(int pos, int data) {
         if (pos < 0 || pos > size()) {
             System.out.println("Invalid position");
             return;
