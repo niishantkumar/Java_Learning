@@ -6,9 +6,9 @@ package Java_Learning.linkedListP2.pracQues;
     Sample Input 1 : 1->2->3->4,  x = 2, y = 4
     Sample Output 1 : 1->4->3->2
  */
+
 // Time Complexity  : O(n)
 // Space Complexity : O(1)
-
 
 class Prac3 {
     Node head;
@@ -16,27 +16,26 @@ class Prac3 {
     // Function to swap nodes
     public void swapNodes(int x, int y) {
         if (x == y) {
-            return; // No need to swap if values are same
+            return; // same key, no need to swap
         }
 
-        // Searching for x and y in the list, while keeping track of their previous
-        // nodes
+        // Searching for x, while keeping track of its previous node
         Node prevX = null, currX = head;
-
         while (currX != null && currX.data != x) {
             prevX = currX;
             currX = currX.next;
         }
 
+        // Searching for y, while keeping track of its previous node
         Node prevY = null, currY = head;
         while (currY != null && currY.data != y) {
             prevY = currY;
             currY = currY.next;
         }
 
-        // If either x or y is not found, return
-        if (currX == null || currY == null)
-            return;
+        if (currX == null || currY == null) {
+            return; // x or y missing, swapping not possible
+        }
 
         // Update previous node's next pointer to point to the swapped node
         if (prevX != null) {
