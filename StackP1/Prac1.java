@@ -48,9 +48,10 @@ public class Prac1 {
 
         // to print stack
         while (!s1.isEmpty()) {
-            System.out.print(s1.peek()+" ");
+            System.out.print(s1.peek() + " ");
             s1.pop();
         }
+
     }
 
 }
