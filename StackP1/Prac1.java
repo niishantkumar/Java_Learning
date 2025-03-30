@@ -2,6 +2,8 @@ package Java_Learning.StackP1;
 
 import java.util.ArrayList;
 
+//creation of Stack using ArrayList
+
 public class Prac1 {
     static class Stack {
         static ArrayList<Integer> list = new ArrayList<>();
