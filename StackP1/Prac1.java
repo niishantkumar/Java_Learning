@@ -51,7 +51,6 @@ public class Prac1 {
             System.out.print(s1.peek() + " ");
             s1.pop();
         }
-
     }
 
 }
