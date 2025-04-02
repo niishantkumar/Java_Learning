@@ -1,28 +1,32 @@
 package Java_Learning.StackP1;
 
-//func to reverse Stack
-
 import java.util.Stack;
-import java.util.ArrayList;
+
+//tc : O(n)
+//sc : O(n)
 
 public class Prac6 {
-    // func to rev Stack
-    public static void reverse(Stack<Integer> stk) {
-        ArrayList<Integer> temp = new ArrayList<>();
 
-        while (!stk.isEmpty()) {
-            temp.add(stk.pop());
+    // Function to reverse stack in O(N) time and O(1) space
+    public static void reverse(Stack<Integer> stk) {
+        if (stk.isEmpty())
+            return;
+
+        // Convert stack to array for swapping
+        int size = stk.size();
+        Integer[] arr = new Integer[size];
+
+        // Pop all elements into array
+        for (int i = 0; i < size; i++) {
+            arr[i] = stk.pop();
         }
 
-        int ind = 0;
-        while (ind < temp.size()) {
-            stk.push(temp.get(ind));
-
-            ind++;
+        // Push back in reverse order
+        for (int i = 0; i < size; i++) {
+            stk.push(arr[i]);
         }
     }
 
-    // main func
     public static void main(String[] args) {
         Stack<Integer> stk = new Stack<>();
 
@@ -32,14 +36,12 @@ public class Prac6 {
         stk.push(3);
         stk.push(4);
 
-        System.out.println("Original Stack :");
+        System.out.println("Original Stack:");
         System.out.println(stk);
-        System.out.println();
 
         reverse(stk);
-        System.out.println("Reversed Stack :");
-        System.out.println(stk);
-        System.out.println();
-    }
 
+        System.out.println("Reversed Stack:");
+        System.out.println(stk);
+    }
 }
