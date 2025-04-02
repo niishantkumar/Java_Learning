@@ -32,11 +32,14 @@ public class Prac6 {
         stk.push(3);
         stk.push(4);
 
-        reverse(stk);
         System.out.println("Original Stack :");
-        while (!stk.isEmpty()) {
-            System.out.println(stk.pop());
-        }
+        System.out.println(stk);
+        System.out.println();
+
+        reverse(stk);
+        System.out.println("Reversed Stack :");
+        System.out.println(stk);
+        System.out.println();
     }
 
 }
