@@ -41,6 +41,7 @@ public class Prac1 {
         }
     }
 
+    @SuppressWarnings("static-access")
     public static void main(String[] args) {
         Stack s1 = new Stack();
 
