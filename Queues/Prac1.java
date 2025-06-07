@@ -56,16 +56,18 @@ public class Prac1 {
         public static void printQueue() {
             if (isEmpty()) {
                 System.out.println("Empty Queue");
+                return;
             }
 
             for (int i = 0; i <= rear; i++) {
-                System.out.print(arr[i]);
+                System.out.print(arr[i] + " ");
             }
         }
 
     }
 
     // main func
+    @SuppressWarnings("static-access")
     public static void main(String[] args) {
         Queue q1 = new Queue(4);
         q1.add(0);
