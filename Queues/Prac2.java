@@ -47,7 +47,6 @@ public class Prac2 {
             }
 
             int result = arr[front];
-            front = (front + 1) % size;
 
             // last element delete
             if (rear == front) {
