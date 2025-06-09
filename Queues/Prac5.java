@@ -19,7 +19,7 @@ public class Prac5 {
                 stk2.push(stk1.pop());
             }
 
-            stk1.add(data);
+            stk1.push(data);
 
             while (!stk2.isEmpty()) {
                 stk1.push(stk2.pop());
