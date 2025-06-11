@@ -58,7 +58,8 @@ public class Prac6 {
         stk.push(5);
 
         while (!stk.isEmpty()) {
-            System.out.println(stk.pop());
+            System.out.println(stk.peek());
+            stk.pop();
         }
 
     }
