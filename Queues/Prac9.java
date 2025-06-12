@@ -15,8 +15,8 @@ public class Prac9 {
 
         Queue<Integer> firstHalf = new LinkedList<>();
 
-        int size = q.size() / 2;
-        for (int i = 0; i < size; i++) {
+        int size = q.size();
+        for (int i = 0; i < size / 2; i++) {
             firstHalf.add(q.remove());
         }
 
