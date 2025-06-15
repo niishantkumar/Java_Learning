@@ -17,7 +17,7 @@ public class Prac7 {
         }
 
         // add
-        public static void add(int data) {
+        public static void push(int data) {
             if (q1.isEmpty()) {
                 q2.add(data);
             } else {
@@ -80,10 +80,10 @@ public class Prac7 {
     public static void main(String[] args) {
         Stack stk1 = new Stack();
 
-        stk1.add(1);
-        stk1.add(2);
-        stk1.add(3);
-        stk1.add(4);
+        stk1.push(1);
+        stk1.push(2);
+        stk1.push(3);
+        stk1.push(4);
 
         while (!stk1.isEmpty()) {
             System.out.println(stk1.peek());
