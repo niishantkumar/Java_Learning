@@ -1,5 +1,7 @@
 package Java_Learning.Queues.PracQues;
 
+import java.util.PriorityQueue;
+
 /*
  ************Connect n ropes with minimum cost**************
 
@@ -14,5 +16,39 @@ package Java_Learning.Queues.PracQues;
  */
 
 public class Prac2 {
+    // func to get minimum cost
+    public static int minCost(int[] arr) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            pq.add(arr[i]);
+        }
+
+        int minCost = 0;
+        int cost1;
+        int cost2;
+        int currCost;
+
+        while (pq.size() > 1) {
+            cost1 = pq.poll();
+            cost2 = pq.poll();
+
+            currCost = cost1 + cost2;
+
+            pq.add(currCost);
+
+            minCost += currCost;
+
+        }
+
+        return minCost;
+    }
+
+    // main func
+    public static void main(String[] args) {
+        int arr[] = { 4, 3, 2, 6 };
+
+        System.out.println(minCost(arr));
+    }
 
 }
