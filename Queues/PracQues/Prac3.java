@@ -19,4 +19,9 @@ package Java_Learning.Queues.PracQues;
 
 public class Prac3 {
 
+  // main func
+  public static void main(String[] args) {
+
+  }
+
 }
