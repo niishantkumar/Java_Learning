@@ -31,8 +31,8 @@ public class Prac3 {
       max_deadline = Math.max(max_deadline, arr[i].deadline);
     }
 
-    char timeLine[] = new char[max_deadline];// array to track whic timeline is used
-    // initial value *
+    char timeLine[] = new char[max_deadline];// array to track which timeline is not used yet
+    // initial value * -> denoting not used
     for (int i = 0; i < timeLine.length; i++) {
       timeLine[i] = '*';
     }
