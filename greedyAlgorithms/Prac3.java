@@ -22,12 +22,12 @@ public class Prac3 {
         }
 
         // sorting ratio
-        Arrays.sort(ratio, Comparator.comparingDouble((O -> O[1])));
+        Arrays.sort(ratio, Comparator.comparingDouble(O -> O[1]));
 
         int capacity = w;
         int finalValue = 0;
 
-        //
+        // selecting item on basis of its val:weight ratio
         for (int i = ratio.length - 1; i >= 0; i--) {
             int idx = (int) ratio[i][0];
             if (capacity >= weight[idx]) {
