@@ -1,5 +1,16 @@
 package Java_Learning.greedyAlgorithms.PracQues;
 
+/*
+   ****Maximum Balanced String Partitions*****
+ We have balanced string str of size N with an equal number of L and R, the task is to find a
+ maximum number X, such that a given string can be partitioned into X balanced substring.
+
+ A string is called to be balanced if the number of ‘L’s in the string equals the number of ‘R’s.
+
+ Input : “LRRRRLLRLLRL”
+ Output : 3
+ */
+
 public class Prac1 {
     public static int maxBalancedSubstrings(String str) {
         int balance = 0;
@@ -19,9 +30,10 @@ public class Prac1 {
                 count++;
 
                 System.out.print(str.substring(lastPoint, i + 1) + " ");
-                lastPoint = i;
+                lastPoint = i + 1;
             }
         }
+        System.out.println();
 
         return count;
     }
