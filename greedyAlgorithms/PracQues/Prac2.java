@@ -14,7 +14,15 @@ package Java_Learning.greedyAlgorithms.PracQues;
 public class Prac2 {
     // func to find Kth largest odd number in a given range
     public static int Kth_largOdd(int l, int r, int k) {
-        int Kth_largOdd = r - (2 * (k - 1));
+
+        int Kth_largOdd;
+
+        if (r % 2 == 0) {
+            Kth_largOdd = r - ((2 * k) - 1);
+
+        } else {
+            Kth_largOdd = r - (2 * (k - 1));
+        }
 
         return Kth_largOdd < l ? 0 : Kth_largOdd;
     }

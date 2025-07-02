@@ -15,13 +15,16 @@ public class Prac1 {
     public static int maxBalancedSubstrings(String str) {
         int balance = 0;
         int count = 0;
+        char currChar;
         int lastPoint = 0;
 
         for (int i = 0; i < str.length(); i++) {
+            currChar = str.charAt(i);
+
             // Increase or decrease the balance counter
-            if (str.charAt(i) == 'L') {
+            if (currChar == 'L') {
                 balance++;
-            } else if (str.charAt(i) == 'R') {
+            } else if (currChar == 'R') {
                 balance--;
             }
 
