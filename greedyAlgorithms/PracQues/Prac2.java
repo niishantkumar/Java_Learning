@@ -28,11 +28,15 @@ public class Prac2 {
     }
 
     public static void main(String[] args) {
-        int l = -3;
-        int r = 3;
-        int k = 1;
+        int l = -3, r = 3, k = 1;
 
         System.out.println(Kth_largOdd(l, r, k));
+
+        l = 10;
+        r = 20;
+        k = 6;
+        System.out.println(Kth_largOdd(l, r, k));
+
     }
 
 }
