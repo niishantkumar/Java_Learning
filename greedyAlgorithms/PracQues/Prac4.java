@@ -1,5 +1,7 @@
 package Java_Learning.greedyAlgorithms.PracQues;
 
+//Lexicographically smallest string of length N and sum K
+
 public class Prac4 {
 
     // Function to find lexicographically smallest string of length n and sum k
@@ -11,12 +13,11 @@ public class Prac4 {
             // Minimum sum required for remaining i characters = i * 1 = i
             // So, max we can assign here = k - i
             int val = Math.min(26, k - i);
-            sb.append((char) ('a' + val - 1));
+            sb.insert(0, (char) ('a' + val - 1));
             k -= val;
         }
 
-        // Since we built from right to left, we need to reverse it
-        return sb.reverse().toString();
+        return sb.toString();
     }
 
     public static void main(String[] args) {
