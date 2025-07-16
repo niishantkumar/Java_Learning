@@ -30,9 +30,9 @@ public class Prac4 {
     // main func
     public static void main(String[] args) {
         /*
-         * 1
-         * / \
-         * 2 3
+         *    1
+         *   / \
+         *  2   3
          * / \ / \
          * 4 5 6 7
          * 
