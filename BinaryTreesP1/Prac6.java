@@ -1,6 +1,6 @@
 package Java_Learning.BinaryTreesP1;
 
-//diameter of a tree
+//diameter of a tree O(n^2)  (approach 1)
 
 public class Prac6 {
     static class Node {
