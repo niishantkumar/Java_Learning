@@ -65,18 +65,21 @@ public class Prac9 {
 
         // loop to print top view nodes
         for (int i = min; i <= max; i++) {
-            System.out.print(i + " ");
+            System.out.print(map.get(i).data + " ");
         }
+
         System.out.println();
     }
 
     public static void main(String[] args) {
-      /*
+  /*
              1
             / \
            2   3
           / \ / \
          4  5 6  7
+                  \
+                   8
          */
 
 
