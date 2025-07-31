@@ -20,7 +20,7 @@ public class Prac10 {
 
     public static void nthLevelNodes(Node root, int level) {
         Queue<Node> q = new LinkedList<>();
-        int levelCount = 0;
+        int levelCount = 1;
         q.add(root);
         q.add(null);
 
@@ -76,6 +76,6 @@ public class Prac10 {
         root.right.right = new Node(7);
         root.right.right.right = new Node(8);
 
-        nthLevelNodes(root, 2);
+        nthLevelNodes(root, 3);
     }
 }
