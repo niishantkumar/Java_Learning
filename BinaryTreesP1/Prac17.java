@@ -18,7 +18,7 @@ public class Prac17 {
     }
 
     // this func prints kth ancestor as soon as it finds it
-    public static int kthAncestor(Node root, int k, int n) {
+    public static int kthAncestor(Node root, int n, int k) {
         if (root == null) {
             return -1;
         }
@@ -27,24 +27,20 @@ public class Prac17 {
             return 0;
         }
 
-        int leftFound = kthAncestor(root.left, k, n);
-        int rightFound = kthAncestor(root.right, k, n);
+        int leftDist = kthAncestor(root.left, n, k);
+        int rightDist = kthAncestor(root.right, n, k);
 
-        if (leftFound != -1) {
-            if (leftFound + 1 == k) {
-                System.out.println("Ancestor: " + root.data);
-            }
-            return leftFound + 1;
+        if (leftDist == -1 && rightDist == -1) {
+            return -1;
         }
 
-        if (rightFound != -1) {
-            if (rightFound + 1 == k) {
-                System.out.println("Ancestor: " + root.data);
-            }
-            return rightFound + 1;
+        int max = Math.max(leftDist, rightDist);
+
+        if (max + 1 == k) {
+            System.out.println("Kth ancestor : " + root.data);
         }
 
-        return -1;
+        return max + 1;
     }
 
     // this func returns the ArrayList containing all the ancestors of Node n
@@ -72,16 +68,16 @@ public class Prac17 {
     }
 
     public static void main(String[] args) {
-          /*
-             1
-            / \
-           2   3
-          / \ / \
-         4  5 6  7
-                  \
-                   8
+        /*
+         * 1
+         * / \
+         * 2 3
+         * / \ / \
+         * 4 5 6 7
+         * \
+         * 8
          */
-        
+
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
@@ -98,7 +94,7 @@ public class Prac17 {
         ancestors(root, 4, path);
         System.out.println("Ancestor : " + path.get(path.size() - k - 1));
 
-        kthAncestor(root, k, 8);
+        kthAncestor(root, 8, k);
 
     }
 }
