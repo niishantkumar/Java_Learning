@@ -69,13 +69,13 @@ public class Prac17 {
 
     public static void main(String[] args) {
         /*
-         * 1
-         * / \
-         * 2 3
-         * / \ / \
-         * 4 5 6 7
-         * \
-         * 8
+             1
+            / \
+           2   3
+          / \ / \
+         4  5 6  7
+                  \
+                   8
          */
 
         Node root = new Node(1);
