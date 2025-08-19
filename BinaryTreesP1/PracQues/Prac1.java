@@ -20,14 +20,14 @@ public class Prac1 {
 
     }
 
-    //helper func
+    // helper func
     static boolean isUnivalTree(Node root) {
         if (root == null)
             return true;
         return isUnivalued(root, root.data);
     }
 
-    //func to check univalued
+    // func to check univalued
     private static boolean isUnivalued(Node root, int data) {
         if (root == null) {
             return true;
@@ -44,7 +44,7 @@ public class Prac1 {
     }
 
     public static void main(String[] args) {
-        /*
+         /*
          *    2
          *   / \
          *  2   2
@@ -53,15 +53,20 @@ public class Prac1 {
          * 
          */
 
-         Node root = new Node(2);
-         root.left = new Node(2);
-         root.right = new Node(2);
-         root.left.left =new Node(5);
-         root.left.right = new Node(2);
-         root.right.left =new Node(2);
-         root.right.right =new Node(2);
+        Node root = new Node(2);
+        root.left = new Node(2);
+        root.right = new Node(2);
+        root.left.left = new Node(5);
+        root.left.right = new Node(2);
+        root.right.left = new Node(2);
+        root.right.right = new Node(2);
 
-         isUnivalTree(root);
+        if (isUnivalTree(root)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
     }
 
 }
