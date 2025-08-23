@@ -1,5 +1,7 @@
 package Java_Learning.BinaryTreesP1.PracQues;
 
+// Delete leaf nodes with values as x
+
 public class Prac3 {
     static class Node {
         int data;
