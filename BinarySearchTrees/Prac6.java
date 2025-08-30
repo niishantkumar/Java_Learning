@@ -18,6 +18,23 @@ public class Prac6 {
         }
     }
 
+    // func to check if BST is valid or not
+    public static boolean isValid(Node root, Node min, Node max) {
+        if (root == null) {
+            return true;
+        }
+
+        if (min != null && root.data <= min.data) {
+            return false;
+        }
+
+        if (max != null && root.data >= max.data) {
+            return false;
+        }
+
+        return isValid(root.left, min, root) && isValid(root.right, root, max);
+    }
+
     // func to build BST
     public static Node insert(Node root, int val) {
         if (root == null) {
@@ -54,7 +71,11 @@ public class Prac6 {
             root = insert(root, values[i]);
         }
 
-        inorder(root);
+        if (isValid(root, null, null)) {
+            System.out.println("Valid");
+        } else {
+            System.out.println("Not valid");
+        }
     }
 
 }
