@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 // validate a Binary Search Tree
 
-//Approach ! -> Get inorder traversal and if it is sorted, then BST is valid
+//Approach 1 -> Get inorder traversal and if it is sorted, then BST is valid
 
 public class Prac6 {
 
