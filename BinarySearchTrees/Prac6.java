@@ -1,5 +1,7 @@
 package Java_Learning.BinarySearchTrees;
 
+import java.util.ArrayList;
+
 // validate a Binary Search Tree
 
 //Approach ! -> Get inorder traversal and if it is sorted, then BST is valid
@@ -19,20 +21,36 @@ public class Prac6 {
     }
 
     // func to check if BST is valid or not
-    public static boolean isValid(Node root, Node min, Node max) {
+    public static boolean isValid(Node root) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        inorder(root, list);
+
+        return isSorted(list);
+
+    }
+
+    // isValid Helper
+    public static void inorder(Node root, ArrayList<Integer> list) {
         if (root == null) {
-            return true;
+            return;
         }
 
-        if (min != null && root.data <= min.data) {
-            return false;
+        inorder(root.left, list);
+        list.add(root.data);
+        inorder(root.right, list);
+    }
+
+    // func to check whether sorted
+    public static boolean isSorted(ArrayList<Integer> list) {
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i) >= list.get(i + 1)) { // BST does not allow dulicate values
+                return false;
+            }
         }
 
-        if (max != null && root.data >= max.data) {
-            return false;
-        }
-
-        return isValid(root.left, min, root) && isValid(root.right, root, max);
+        return true;
     }
 
     // func to build BST
@@ -53,16 +71,6 @@ public class Prac6 {
         return root;
     }
 
-    public static void inorder(Node root) {
-        if (root == null) {
-            return;
-        }
-
-        inorder(root.left);
-        System.out.print(root.data + " ");
-        inorder(root.right);
-    }
-
     public static void main(String[] args) {
         int values[] = { 5, 1, 3, 4, 2, 7 };
         Node root = null;
@@ -71,7 +79,7 @@ public class Prac6 {
             root = insert(root, values[i]);
         }
 
-        if (isValid(root, null, null)) {
+        if (isValid(root)) {
             System.out.println("Valid");
         } else {
             System.out.println("Not valid");
