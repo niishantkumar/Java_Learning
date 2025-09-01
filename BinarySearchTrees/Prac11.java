@@ -42,7 +42,7 @@ public class Prac11 {
 
         int size = leftInfo.size + rightInfo.size + 1;
         int min = Math.min(root.data, Math.min(leftInfo.min, rightInfo.min));
-        int max = Math.max(root.data, Math.min(leftInfo.max, rightInfo.max));
+        int max = Math.max(root.data, Math.max(leftInfo.max, rightInfo.max));
 
         if (root.data <= leftInfo.max || root.data >= rightInfo.min) {
             return new Info(false, size, min, max);
