@@ -1,5 +1,7 @@
 package Java_Learning.Heaps;
 
+//HeapSort (Ascending)
+
 public class Prac5 {
 
     public static void heapify(int[] arr, int i, int size) {
