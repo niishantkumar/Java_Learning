@@ -40,7 +40,7 @@ public class Prac9 {
             // to count num of soldier in row i
             int soldierCount = 0;
             for (int j = 0; j < army[0].length; j++) {
-                soldierCount += army[0][j] == 1 ? 1 : 0;
+                soldierCount += army[i][j] == 1 ? 1 : 0;
             }
 
             level.add(new Row(soldierCount, i));
